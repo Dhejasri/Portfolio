@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhejasri K | Python Developer and AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f9; --surface:#fff; --ink:#0f1b2d; --muted:#51607a; --line:#d5dbe6;
+  --accent:#0f766e; --accent2:#3b5bdb; --mark:#f6c453; --markink:#0f1b2d; --dot:#c9d1df;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1320; --surface:#131f33; --ink:#e8edf5; --muted:#9db0c9; --line:#26354d;
+    --accent:#4fd1c0; --accent2:#8ea2ff; --dot:#1f2d45; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1320; --surface:#131f33; --ink:#e8edf5; --muted:#9db0c9; --line:#26354d;
+  --accent:#4fd1c0; --accent2:#8ea2ff; --dot:#1f2d45; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.12;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--ink);text-decoration:none;font-size:.95rem}
+nav .links a:hover{color:var(--accent)}
+#theme{background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:999px;padding:4px 12px;font:500 .85rem "IBM Plex Sans",sans-serif;cursor:pointer}
+.hero{padding:76px 0 56px;background-image:radial-gradient(var(--dot) 1.2px,transparent 1.2px);background-size:22px 22px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.88rem;color:var(--muted);margin-bottom:22px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#22a06b;display:block}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block;font-size:.42em;font-weight:600;letter-spacing:-.01em;color:var(--accent);margin-top:10px}
+.hero p.lead{font-size:1.18rem;color:var(--muted);max-width:33em;margin:22px 0 28px}
+.btns a{display:inline-block;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:500;margin:0 10px 10px 0}
+.btns .p{background:var(--ink);color:var(--bg)}
+.btns .s{border:1.5px solid var(--ink);color:var(--ink)}
+.doc{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 24px;box-shadow:8px 8px 0 var(--line)}
+.doc h3{font-size:1rem;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.row span:first-child{color:var(--muted)}
+.row mark{background:var(--mark);color:var(--markink);padding:1px 10px;border-radius:3px;font-weight:500;font-size:.82rem;animation:pop .5s both}
+.row:nth-of-type(1) mark{animation-delay:.3s}.row:nth-of-type(2) mark{animation-delay:.55s}
+.row:nth-of-type(3) mark{animation-delay:.8s}.row:nth-of-type(4) mark{animation-delay:1.05s}
+.row:nth-of-type(5) mark{animation-delay:1.3s}.row:nth-of-type(6) mark{animation-delay:1.55s}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+.stats{border-block:1px solid var(--line);background:var(--surface)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding:26px 20px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font:800 2rem "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.stats small{color:var(--muted);font-size:.88rem}
+section{padding:64px 0}
+.h{font-size:2rem;margin-bottom:30px}
+.about{max-width:44rem;font-size:1.08rem}
+.tl{border-left:2px solid var(--line);padding-left:30px;position:relative;max-width:50rem}
+.tl::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl h3{font-size:1.3rem}
+.tl .meta{color:var(--muted);margin:4px 0 14px;font-size:.95rem}
+.tl ul{margin:0;padding-left:20px}.tl li{margin-bottom:9px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:24px;display:flex;flex-direction:column}
+.card:nth-child(2){border-top-color:var(--accent2)}.card:nth-child(3){border-top-color:var(--mark)}
+.card:nth-child(4){border-top-color:#d9486f}.card:nth-child(5){border-top-color:var(--accent2)}
+.card h3{font-size:1.25rem;margin-bottom:10px}
+.card p{margin:0 0 14px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:2px 11px;font-size:.8rem;color:var(--ink)}
+.card a{display:inline-block;margin-top:14px;font-weight:500}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+.sk h3{font-size:1rem;margin-bottom:10px}
+.sk .chips span{background:var(--surface)}
+.contact{text-align:left}
+.contact p{max-width:34rem;color:var(--muted);font-size:1.1rem;margin:0 0 24px}
+.contact .big{display:inline-block;font:700 clamp(1.3rem,4vw,2.2rem) "Bricolage Grotesque",sans-serif;text-decoration:none;border-bottom:3px solid var(--mark);color:var(--ink);word-break:break-all}
+.links2{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap}
+footer{padding:26px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (max-width:780px){
+  .hero{padding-top:40px}
+  .hero .wrap,.grid,.sk{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stats div:nth-child(3){border-left:0;padding-left:0}
+  nav .links a{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.row mark{animation:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Dhejasri K</b>
+<div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+<button id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button></div></div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="pill"><i></i>Open to AI Engineer roles</div>
+    <h1>Dhejasri K<span>Python developer and AI engineer</span></h1>
+    <p class="lead">I build backend services and AI automation that turn logistics documents and emails into structured data, from OCR pipelines to RAG chatbots and multi-agent workflows.</p>
+    <div class="btns"><a class="p" href="#projects">See my projects</a><a class="s" href="mailto:dhejasrik@gmail.com">Email me</a></div>
+  </div>
+  <div class="doc" role="img" aria-label="House Bill of Lading fields extracted into JSON">
+    <h3>House Bill of Lading → JSON</h3>
+    <div class="row"><span>BL number</span><mark>extracted</mark></div>
+    <div class="row"><span>Container number</span><mark>extracted</mark></div>
+    <div class="row"><span>Ports</span><mark>extracted</mark></div>
+    <div class="row"><span>Parties</span><mark>extracted</mark></div>
+    <div class="row"><span>HS code</span><mark>extracted</mark></div>
+    <div class="row"><span>Goods description</span><mark>extracted</mark></div>
+  </div>
+</div></header>
+
+<div class="stats"><div class="wrap">
+  <div><b>50% → 90%</b><small>HBL field-level accuracy</small></div>
+  <div><b>137</b><small>HBL PDFs tested</small></div>
+  <div><b>87%</b><small>violence detection accuracy</small></div>
+  <div><b>1 year</b><small>professional experience</small></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <h2 class="h">About</h2>
+  <p class="about">I’m a software engineer with one year of experience in Python backend development, REST API integration, and document and email automation. I work with OCR, LLMs, RAG, LangChain, and prompt engineering, and I build chatbots and design AI agents that handle logistics workflows. I hold a B.Tech in Information Technology (Jeppiaar Engineering College, 2024, CGPA 8.52/10).</p>
+</div></section>
+
+<section id="experience" style="padding-top:0"><div class="wrap">
+  <h2 class="h">Experience</h2>
+  <div class="tl">
+    <h3>Software Engineer, NewAge Software &amp; Solutions</h3>
+    <p class="meta">Chennai | December 2025 to present</p>
+    <ul>
+      <li>Automated logistics pre-alert processing by extracting data from HBL, MBL, manifest, and debit note documents into structured JSON.</li>
+      <li>Built an HBL extraction pipeline with PyMuPDF and RapidOCR for digital and scanned PDFs, raising field-level accuracy from 50% to 90% with template and rule-based fixes.</li>
+      <li>Tested Gemini and other LLM/VLM models for document extraction, with prompt engineering and validation checks.</li>
+      <li>Designed a multi-agent architecture (Master Agent with Mail and Document Agents) and built a Mail Agent proof of concept.</li>
+      <li>Integrated UPS and Fluent Cargo APIs into backend workflows.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="projects" style="padding-top:0"><div class="wrap">
+  <h2 class="h">Projects</h2>
+  <div class="grid">
+    <article class="card"><h3>HBL Document Extraction</h3>
+      <p>A hybrid text and OCR pipeline that reads House Bill of Lading PDFs, validates each field against ground-truth data, and lifted field-level accuracy from 50% to 90% across 137 documents.</p>
+      <div class="chips"><span>Python</span><span>PyMuPDF</span><span>RapidOCR</span><span>JSON</span></div></article>
+    <article class="card"><h3>AI Email Agent</h3>
+      <p>Reads unread Outlook emails in batches, classifies them, extracts OTPs, files them into categories and folders, and flags urgent ones. It writes replies from an Excel data source and uses earlier messages to answer follow-ups.</p>
+      <div class="chips"><span>Python</span><span>LLM</span><span>Outlook</span><span>Excel</span></div></article>
+    <article class="card"><h3>LLM Chatbot with RAG</h3>
+      <p>A chatbot built with an LLM, retrieval-augmented generation (RAG), and LangChain. It retrieves relevant context before answering, so responses are grounded in that context.</p>
+      <div class="chips"><span>Python</span><span>LLM</span><span>RAG</span><span>LangChain</span></div></article>
+    <article class="card"><h3>CrimeGuard</h3>
+      <p>Real-time violence detection on CCTV feeds with 87% accuracy. Models run behind a Flask API, and an email alert goes out when an event is detected.</p>
+      <div class="chips"><span>YOLOv5/v7</span><span>CNN</span><span>Flask</span><span>OpenCV</span></div>
+      <a href="https://github.com/Dhejasri/crime-guard" target="_blank" rel="noopener">View on GitHub</a></article>
+    <article class="card"><h3>E-Commerce Website</h3>
+      <p>A Django store with product listings, cart, orders, checkout, authentication, role-based access, and an admin panel for managing products.</p>
+      <div class="chips"><span>Django</span><span>MySQL</span><span>REST API</span></div>
+      <a href="https://github.com/Dhejasri/ECOMMERCE" target="_blank" rel="noopener">View on GitHub</a></article>
+  </div>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+  <h2 class="h">Skills</h2>
+  <div class="sk">
+    <div><h3>Languages</h3><div class="chips"><span>Python</span><span>SQL</span><span>JavaScript</span></div></div>
+    <div><h3>AI and LLM</h3><div class="chips"><span>Gemini</span><span>RAG</span><span>LangChain</span><span>Chatbots</span><span>Vision-language models</span><span>Prompt engineering</span><span>AI agents</span></div></div>
+    <div><h3>Document AI</h3><div class="chips"><span>RapidOCR</span><span>PyMuPDF</span><span>OCR</span><span>PDF processing</span><span>Rule-based extraction</span></div></div>
+    <div><h3>Backend</h3><div class="chips"><span>FastAPI</span><span>Flask</span><span>Django</span><span>Django REST Framework</span><span>REST APIs</span><span>ORM</span></div></div>
+    <div><h3>Data and tools</h3><div class="chips"><span>MySQL</span><span>Pandas</span><span>Git</span><span>GitHub</span><span>Postman</span><span>Outlook</span><span>Excel</span></div></div>
+    <div><h3>Computer vision</h3><div class="chips"><span>YOLOv5/v7</span><span>CNN</span><span>OpenCV</span></div></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact" style="border-top:1px solid var(--line)"><div class="wrap">
+  <h2 class="h">Let’s work together</h2>
+  <p>I’m looking for an AI Engineer or Python developer role. Send me a message and I’ll reply.</p>
+  <a class="big" href="mailto:dhejasrik@gmail.com">dhejasrik@gmail.com</a>
+  <div class="links2">
+    <a href="https://www.linkedin.com/in/dhejasri-k-5717a023b" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Dhejasri" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 Dhejasri K</div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('theme'),r=document.documentElement;
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    r.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
